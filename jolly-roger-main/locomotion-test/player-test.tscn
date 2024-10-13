@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://cbr4xguveorqg"]
+[gd_scene load_steps=3 format=3 uid="uid://cbr4xguveorqg"]
 
-[node name="Player-test" type="Node3D"]
+[ext_resource type="Script" path="res://locomotion-test/player_test.gd" id="1_jdcur"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_e41u4"]
+
+[node name="PlayerTest" type="CharacterBody3D"]
+motion_mode = 1
+script = ExtResource("1_jdcur")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, -0.055, 0, 0.25, -2.40413e-09, 0, 0, 0)
+mesh = SubResource("PrismMesh_e41u4")

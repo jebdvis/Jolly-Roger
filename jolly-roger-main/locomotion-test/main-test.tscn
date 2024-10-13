@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://do7dtvt68uano"]
+[gd_scene load_steps=6 format=3 uid="uid://do7dtvt68uano"]
 
-[ext_resource type="Texture2D" uid="uid://d0a5lp0ga8c4t" path="res://icon.svg" id="1_y2n0g"]
+[ext_resource type="Texture2D" uid="uid://e1tou6ys3ksr" path="res://locomotion-test/test-textures/texture_09.png" id="1_ma6v4"]
+[ext_resource type="PackedScene" uid="uid://cbr4xguveorqg" path="res://locomotion-test/player-test.tscn" id="2_olen6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8j37"]
+albedo_texture = ExtResource("1_ma6v4")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xogxv"]
+material = SubResource("StandardMaterial3D_h8j37")
 
 [sub_resource type="MeshLibrary" id="MeshLibrary_kx1g3"]
 item/0/name = "test-plane"
@@ -11,13 +16,25 @@ item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 item/0/shapes = []
 item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/0/navigation_layers = 1
-item/0/preview = ExtResource("1_y2n0g")
 
 [node name="Main-test" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.867913, 0.889668, 0.867764, 1)
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = SubResource("MeshLibrary_kx1g3")
 data = {
-"cells": PackedInt32Array(0, 65535, 1441792, 65535, 65535, 1441792, 65535, 0, 1441792, 0, 0, 1441792)
+"cells": PackedInt32Array(0, 65535, 0, 0, 0, 0, 65534, 65534, 0, 65535, 65534, 0, 0, 65534, 0, 1, 65534, 0, 2, 65534, 0, 2, 65535, 0, 1, 65535, 0, 1, 0, 0, 2, 0, 0, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65535, 1, 0, 65534, 1, 0, 65533, 1, 0, 65533, 0, 0, 65533, 65535, 0, 65533, 65534, 0, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65533, 0, 1, 65533, 0, 2, 65533, 0, 3, 65533, 0, 3, 65534, 0, 3, 65535, 0, 3, 0, 0, 2, 2, 0, 3, 2, 0, 3, 1, 0, 1, 2, 0, 0, 2, 0, 65535, 2, 0, 65534, 2, 0, 65533, 2, 0, 65532, 65533, 0, 65532, 65534, 0, 65532, 65535, 0, 65532, 0, 0, 65532, 1, 0, 65532, 2, 0, 3, 3, 0, 2, 3, 0, 1, 3, 0, 0, 3, 0, 65535, 3, 0, 65534, 3, 0, 65533, 3, 0, 65532, 3, 0, 3, 65532, 0, 2, 65532, 0, 65535, 65532, 0, 0, 65532, 0, 1, 65532, 0, 65534, 65532, 0, 65533, 65532, 0, 65532, 65532, 0, 65534, 0, 0, 65534, 65535, 0, 65535, 65535, 0, 65535, 0, 0)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="PlayerTest" parent="." instance=ExtResource("2_olen6")]
+
+[node name="Camera3D" type="Camera3D" parent="PlayerTest"]
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 5, 5, 5)
+keep_aspect = 0
+v_offset = -0.75
+projection = 1
+size = 5.0
