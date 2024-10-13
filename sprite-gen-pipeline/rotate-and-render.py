@@ -1,23 +1,27 @@
 import bpy
 import math
 
+
+
+
+
+# these are the variables that you need to change
+# this is the path where the renders go
+path_for_stuff = "C:\Users\user\Pictures\blender"
+# this is the degree shift for the sun
+degrees = 15
+sprite_name = "Cube"
+light_name = "Light"
+
+
+
+# not completely sure that this works
 bpy.context.scene.render.resolution_x = 50
 bpy.context.scene.render.resolution_y = 50
 bpy.context.scene.render.resolution_percentage = 100
 bpy.context.scene.render.filepath = path_for_stuff
 bpy.context.scene.render.film_transparent = True
 bpy.context.scene.render.engine = "CYCLES"
-
-# not completely sure that this works
-
-# these are the variables that you need to change
-# this is the path where the renders go
-path_for_stuff = "path for thing"
-# this is the degree shift for the sun
-degrees = 15
-sprite_name = ""
-light_name = ""
-
 
 sprite_model = bpy.data.objects.get(sprite_name)
 light = bpy.data.objects.get(light_name)
@@ -46,7 +50,7 @@ bpy.ops.transform.rotate(
     use_snap_selectable=False,
     release_confirm=True,
 )
-steps = 180 / degrees
+steps = (int)(180 / degrees)
 stepSize = math.radians(degrees)
 for i in range(0, steps):
     bpy.ops.transform.rotate(
