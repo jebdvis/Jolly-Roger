@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://do7dtvt68uano"]
+[gd_scene load_steps=8 format=3 uid="uid://do7dtvt68uano"]
 
 [ext_resource type="Texture2D" uid="uid://e1tou6ys3ksr" path="res://locomotion-test/test-textures/texture_09.png" id="1_ma6v4"]
 [ext_resource type="PackedScene" uid="uid://cbr4xguveorqg" path="res://locomotion-test/player-test.tscn" id="2_olen6"]
 [ext_resource type="Script" path="res://locomotion-test/scripts/camera_follow.gd" id="3_l10gm"]
+[ext_resource type="PackedScene" uid="uid://dcakbjm3fvlvl" path="res://locomotion-test/test-ui.tscn" id="4_i556b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8j37"]
 albedo_texture = ExtResource("1_ma6v4")
@@ -42,3 +43,7 @@ keep_aspect = 0
 v_offset = -0.75
 projection = 1
 size = 5.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("4_i556b")]

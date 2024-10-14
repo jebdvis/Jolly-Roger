@@ -3,11 +3,11 @@ extends CharacterBody3D
 #export variables that can be modified in properties
 #in degrees
 @export var max_steer_angle:float = 30
-@export var accel_decel_const:float = 1.0
+@export var accel_decel_const:float = .075
 @export var steer_change_speed:float = .50
-@export var target_speed_change:float = 2.0
-@export var max_targ_speed:float = 3.0
-@export var min_targ_speed:float = -.3
+@export var target_speed_change:float = .1
+@export var max_targ_speed:float = 1.0
+@export var min_targ_speed:float = -.2
 
 var steer_angle:float = 0.0
 var heading:Vector3 = Vector3(0,0,1)

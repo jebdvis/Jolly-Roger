@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcakbjm3fvlvl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_08ujc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xlr30"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_v0sk5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tjuyd"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="speedUI" type="Control" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(30, 360)
+layout_mode = 1
+anchors_preset = 0
+offset_left = 1094.0
+offset_top = 209.0
+offset_right = 1124.0
+offset_bottom = 569.0
+scale = Vector2(1.02007, 1.02007)
+
+[node name="Main Bar" type="Sprite2D" parent="speedUI"]
+position = Vector2(15, 180)
+scale = Vector2(30, 360)
+texture = SubResource("CanvasTexture_08ujc")
+
+[node name="ZeroSpeed" type="Sprite2D" parent="speedUI"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(30, 3)
+texture = SubResource("CanvasTexture_xlr30")
+centered = false
+
+[node name="TargetSpeed" type="Sprite2D" parent="speedUI"]
+modulate = Color(1, 0.568627, 0.121569, 1)
+scale = Vector2(30, 3)
+texture = SubResource("CanvasTexture_v0sk5")
+centered = false
+
+[node name="CurrSpeed" type="Sprite2D" parent="speedUI"]
+modulate = Color(0, 1, 0.0156863, 1)
+scale = Vector2(30, 3)
+texture = SubResource("CanvasTexture_tjuyd")
+centered = false
