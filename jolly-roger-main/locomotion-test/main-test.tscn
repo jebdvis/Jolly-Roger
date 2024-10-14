@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://do7dtvt68uano"]
+[gd_scene load_steps=7 format=3 uid="uid://do7dtvt68uano"]
 
 [ext_resource type="Texture2D" uid="uid://e1tou6ys3ksr" path="res://locomotion-test/test-textures/texture_09.png" id="1_ma6v4"]
 [ext_resource type="PackedScene" uid="uid://cbr4xguveorqg" path="res://locomotion-test/player-test.tscn" id="2_olen6"]
+[ext_resource type="Script" path="res://locomotion-test/scripts/camera_follow.gd" id="3_l10gm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8j37"]
 albedo_texture = ExtResource("1_ma6v4")
@@ -32,8 +33,11 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="PlayerTest" parent="." instance=ExtResource("2_olen6")]
 
-[node name="Camera3D" type="Camera3D" parent="PlayerTest"]
-transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 5, 5, 5)
+[node name="camera_follow" type="Node3D" parent="."]
+script = ExtResource("3_l10gm")
+
+[node name="PlayerCamera" type="Camera3D" parent="camera_follow"]
+transform = Transform3D(0.707107, -0.353553, 0.612373, 0, 0.866026, 0.5, -0.707107, -0.353553, 0.612373, 5, 5, 5)
 keep_aspect = 0
 v_offset = -0.75
 projection = 1

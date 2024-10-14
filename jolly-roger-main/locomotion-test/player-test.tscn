@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbr4xguveorqg"]
 
-[ext_resource type="Script" path="res://locomotion-test/player_test.gd" id="1_jdcur"]
+[ext_resource type="Script" path="res://locomotion-test/scripts/player_test.gd" id="1_jdcur"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_e41u4"]
 
