@@ -4,7 +4,7 @@ extends CharacterBody3D
 #in degrees
 @export var max_steer_angle:float = 30
 @export var accel_decel_const:float = .075
-@export var steer_change_speed:float = .50
+@export var steer_change_speed:float = 1
 @export var target_speed_change:float = .1
 @export var max_targ_speed:float = 1.0
 @export var min_targ_speed:float = -.2

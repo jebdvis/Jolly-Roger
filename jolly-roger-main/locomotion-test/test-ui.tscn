@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcakbjm3fvlvl"]
+[gd_scene load_steps=6 format=3 uid="uid://dcakbjm3fvlvl"]
+
+[ext_resource type="Script" path="res://locomotion-test/speed_ui.gd" id="1_1j16x"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_08ujc"]
 
@@ -26,6 +28,7 @@ offset_top = 209.0
 offset_right = 1124.0
 offset_bottom = 569.0
 scale = Vector2(1.02007, 1.02007)
+script = ExtResource("1_1j16x")
 
 [node name="Main Bar" type="Sprite2D" parent="speedUI"]
 position = Vector2(15, 180)

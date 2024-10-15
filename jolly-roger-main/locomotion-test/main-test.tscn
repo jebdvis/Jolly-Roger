@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://do7dtvt68uano"]
 
-[ext_resource type="Texture2D" uid="uid://e1tou6ys3ksr" path="res://locomotion-test/test-textures/texture_09.png" id="1_ma6v4"]
+[ext_resource type="Texture2D" uid="uid://c2e0p0atdsi8y" path="res://locomotion-test/test-textures/texture_09.png" id="1_qcs7j"]
 [ext_resource type="PackedScene" uid="uid://cbr4xguveorqg" path="res://locomotion-test/player-test.tscn" id="2_olen6"]
 [ext_resource type="Script" path="res://locomotion-test/scripts/camera_follow.gd" id="3_l10gm"]
 [ext_resource type="PackedScene" uid="uid://dcakbjm3fvlvl" path="res://locomotion-test/test-ui.tscn" id="4_i556b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8j37"]
-albedo_texture = ExtResource("1_ma6v4")
+albedo_texture = ExtResource("1_qcs7j")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xogxv"]
 material = SubResource("StandardMaterial3D_h8j37")
