@@ -33,7 +33,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="PlayerTest" parent="." groups=["player"] instance=ExtResource("2_olen6")]
+[node name="PlayerTest" parent="." instance=ExtResource("2_olen6")]
 
 [node name="camera_follow" type="Node3D" parent="."]
 script = ExtResource("3_l10gm")
