@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0y6ux4j7t6q"]
+
+[ext_resource type="Script" path="res://island_interact.gd" id="1_tt35s"]
+[ext_resource type="Script" path="res://island_encounter.gd" id="2_4r0g4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g6wmj"]
+height = 0.2
+radius = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vrp1h"]
+height = 0.2
+radius = 4.0
+
+[node name="island-test" type="Node3D"]
+
+[node name="IslandInteract" type="Area3D" parent="."]
+collision_layer = 2
+script = ExtResource("1_tt35s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandInteract"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+shape = SubResource("CylinderShape3D_g6wmj")
+
+[node name="IslandEncounter" type="Area3D" parent="."]
+collision_layer = 32
+script = ExtResource("2_4r0g4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandEncounter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+shape = SubResource("CylinderShape3D_vrp1h")
+
+[connection signal="body_entered" from="IslandInteract" to="IslandInteract" method="_on_body_entered"]
+[connection signal="body_entered" from="IslandEncounter" to="IslandEncounter" method="_on_body_entered"]

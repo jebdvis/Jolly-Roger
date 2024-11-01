@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://do7dtvt68uano"]
+[gd_scene load_steps=9 format=3 uid="uid://do7dtvt68uano"]
 
 [ext_resource type="Texture2D" uid="uid://c2e0p0atdsi8y" path="res://locomotion-test/test-textures/texture_09.png" id="1_qcs7j"]
 [ext_resource type="PackedScene" uid="uid://cbr4xguveorqg" path="res://locomotion-test/player-test.tscn" id="2_olen6"]
 [ext_resource type="Script" path="res://locomotion-test/scripts/camera_follow.gd" id="3_l10gm"]
 [ext_resource type="PackedScene" uid="uid://dcakbjm3fvlvl" path="res://locomotion-test/test-ui.tscn" id="4_i556b"]
+[ext_resource type="PackedScene" uid="uid://c0y6ux4j7t6q" path="res://island_test.tscn" id="5_vt12e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8j37"]
 albedo_texture = ExtResource("1_qcs7j")
@@ -32,7 +33,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="PlayerTest" parent="." instance=ExtResource("2_olen6")]
+[node name="PlayerTest" parent="." groups=["player"] instance=ExtResource("2_olen6")]
 
 [node name="camera_follow" type="Node3D" parent="."]
 script = ExtResource("3_l10gm")
@@ -47,3 +48,6 @@ size = 5.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("4_i556b")]
+
+[node name="island-test" parent="." instance=ExtResource("5_vt12e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29744, 0, 3.34603)
