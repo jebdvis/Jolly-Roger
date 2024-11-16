@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://k678c2cx5plc"]
+
+[ext_resource type="Script" path="res://scenes/Island/scripts/island_spawner.gd" id="1_4tutu"]
+
+[node name="IslandSpawner" type="Node"]
+script = ExtResource("1_4tutu")
+spawnTime = null
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

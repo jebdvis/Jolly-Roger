@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5qrigmwv1v82"]
+
+[ext_resource type="Script" path="res://scenes/Island/scripts/island.gd" id="1_ldc4d"]
+[ext_resource type="Texture2D" uid="uid://c01g544v1r528" path="res://assets/images/island.png" id="2_5no5i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pi03h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5no5i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_snvod"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_eh5ej"]
+radius = 2.34077
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_shctf"]
+radius = 3.61658
+
+[node name="Island" type="Node3D"]
+script = ExtResource("1_ldc4d")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_pi03h")
+
+[node name="IslandColider" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_snvod")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandColider"]
+shape = SubResource("CylinderShape3D_eh5ej")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_shctf")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
